@@ -1,4 +1,4 @@
-SUBDIRS = . gdk-pixbuf-loader tests tools doc build
+SUBDIRS = . gdk-pixbuf-loader tests tools build
 
 NULL =
 BUILT_SOURCES =
@@ -163,7 +163,6 @@ EXTRA_DIST =				\
 	NEWS				\
 	COPYING.LIB 			\
 	librsvg-zip.in 			\
-	gtk-doc.make			\
 	Rsvg-2.0-custom.vala		\
 	Rsvg-2.0.metadata		\
 	config.h.win32.in		\
@@ -211,8 +210,6 @@ s-enum-types-c: $(headers) Makefile
 	&& (cmp -s tmp-librsvg-enum-types.c librsvg-enum-types.c || cp tmp-librsvg-enum-types.c librsvg-enum-types.c ) \
 	&& rm -f tmp-librsvg-enum-types.c \
 	&& echo timestamp > $(@F)
-
-DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
 
 if HAVE_INTROSPECTION
 -include $(INTROSPECTION_MAKEFILE)

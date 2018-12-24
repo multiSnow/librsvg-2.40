@@ -203,12 +203,6 @@ fi
 
 AC_SUBST([BSYMBOLIC_LDFLAG])
 
-##################################################
-# Checks for gtk-doc and docbook-tools
-##################################################
-
-GTK_DOC_CHECK([1.13],[--flavour no-tmpl])
-
 AC_SUBST([GLIB_PREFIX],[$($PKG_CONFIG --variable=prefix glib-2.0)])
 AC_SUBST([GDK_PIXBUF_PREFIX],[$($PKG_CONFIG --variable=prefix gdk-pixbuf-2.0)])
 AC_SUBST([GTK_PREFIX],[$($PKG_CONFIG --variable=prefix gdk-pixbuf-2.0)])
@@ -297,8 +291,6 @@ librsvg-zip
 gdk-pixbuf-loader/Makefile
 tests/Makefile
 tools/Makefile
-doc/Makefile
-doc/version.xml
 config.h.win32
 build/Makefile
 build/win32/Makefile
