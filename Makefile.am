@@ -163,7 +163,6 @@ EXTRA_DIST =				\
 	NEWS				\
 	COPYING.LIB 			\
 	librsvg-zip.in 			\
-	Rsvg-2.0-custom.vala		\
 	Rsvg-2.0.metadata		\
 	config.h.win32.in		\
 	config.h.win32			\
@@ -248,24 +247,6 @@ typelibsdir = $(libdir)/girepository-1.0
 nodist_typelibs_DATA = $(INTROSPECTION_GIRS:.gir=.typelib)
 
 CLEANFILES += $(nodist_gir_DATA) $(nodist_typelibs_DATA)
-
-if ENABLE_VAPIGEN
-include $(VAPIGEN_MAKEFILE)
-
-librsvg-$(RSVG_API_VERSION).vapi: Rsvg-$(RSVG_API_VERSION).gir
-
-VAPIGEN_VAPIS = librsvg-$(RSVG_API_VERSION).vapi
-
-librsvg_@RSVG_API_VERSION_U@_vapi_DEPS = gio-2.0 cairo
-librsvg_@RSVG_API_VERSION_U@_vapi_METADATADIRS = $(top_srcdir)
-librsvg_@RSVG_API_VERSION_U@_vapi_FILES = $(top_builddir)/Rsvg-$(RSVG_API_VERSION).gir $(top_srcdir)/Rsvg-$(RSVG_API_VERSION)-custom.vala
-
-vapidir = $(datadir)/vala/vapi
-vapi_DATA = $(VAPIGEN_VAPIS)
-
-CLEANFILES += $(VAPIGEN_VAPIS)
-
-endif # ENABLE_VAPIGEN
 
 endif # HAVE_INTROSPECTION
 

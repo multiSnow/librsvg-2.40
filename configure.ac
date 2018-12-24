@@ -235,9 +235,6 @@ fi
 
 GOBJECT_INTROSPECTION_CHECK([0.10.8])
 
-# Vala bindings
-VAPIGEN_CHECK([0.17.1.26],,,[no])
-
 dnl ===========================================================================
 
 m4_copy([AC_DEFUN],[glib_DEFUN])
@@ -317,7 +314,6 @@ librsvg-$VERSION
 	compiler:                       ${CC}
 	
 	Build introspectable bindings:  ${found_introspection}
-	Build Vala bindings:            ${enable_vala}
 	Build GdkPixbuf loader:         ${enable_pixbuf_loader}
         GTK+ $GTK3_REQUIRED or later:           ${have_gtk_3}
 	Build miscellaneous tools:      ${build_misc_tools}
