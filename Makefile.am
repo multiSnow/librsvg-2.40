@@ -150,8 +150,7 @@ rsvg_view_3_LDADD = \
 	$(top_builddir)/librsvg-@RSVG_API_MAJOR_VERSION@.la \
 	$(GTK3_LIBS)		\
 	$(LIBRSVG_LIBS)		\
-	$(GTHREAD_LIBS)		\
-	$(LIBM)
+	$(GTHREAD_LIBS)
 
 if OS_WIN32
 rsvg_view_3_LDFLAGS += -mwindows
